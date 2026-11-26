@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 720" role="img">
+<rect width="640" height="720" fill="#efe8dc"/>
+<g transform="translate(20 10)">
+<path d="M236 78 L150 104 L58 192 L112 252 L160 218 L160 612 Q300 634 440 612 L440 218 L488 252 L542 192 L450 104 L364 78 Q300 132 236 78 Z" fill="#fbf9f5" stroke="#17171a" stroke-width="3" stroke-linejoin="round"/>
+<path d="M150 104 Q176 170 160 218 M450 104 Q424 170 440 218" stroke="#17171a" stroke-width="1.5" fill="none" stroke-dasharray="5 5"/>
+<path d="M236 78 Q300 134 364 78" stroke="#17171a" stroke-width="3" fill="none"/>
+<g stroke="#b4684c" stroke-width="2.5" fill="#b4684c" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="700">
+<line x1="160" y1="262" x2="440" y2="262"/><path d="M160 262 l10 -6 v12 z M440 262 l-10 -6 v12 z"/>
+<circle cx="300" cy="262" r="15" fill="#fbf9f5"/><text x="300" y="268" text-anchor="middle" fill="#b4684c" stroke="none">A</text>
+<line x1="500" y1="78" x2="500" y2="612"/><path d="M500 78 l-6 10 h12 z M500 612 l-6 -10 h12 z"/>
+<line x1="440" y1="78" x2="500" y2="78" stroke-dasharray="4 4"/><line x1="440" y1="612" x2="500" y2="612" stroke-dasharray="4 4"/>
+<circle cx="500" cy="345" r="15" fill="#fbf9f5"/><text x="500" y="351" text-anchor="middle" fill="#b4684c" stroke="none">B</text>
+<line x1="450" y1="104" x2="542" y2="192"/>
+<line x1="476" y1="262" x2="518" y2="226" stroke="none"/>
+<path d="M452 100 L546 188" stroke-dasharray="4 4" stroke-width="2"/>
+<circle cx="560" cy="150" r="15" fill="#fbf9f5"/><text x="560" y="156" text-anchor="middle" fill="#b4684c" stroke="none">C</text>
+</g></g>
+<g font-family="Helvetica, Arial, sans-serif" font-size="17" fill="#17171a">
+<text x="40" y="676" font-weight="700">A</text><text x="62" y="676">Lebar dada</text>
+<text x="190" y="676" font-weight="700">B</text><text x="212" y="676">Panjang badan</text>
+<text x="380" y="676" font-weight="700">C</text><text x="402" y="676">Panjang lengan</text></g>
+</svg>

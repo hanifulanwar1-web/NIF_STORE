@@ -1,0 +1,72 @@
+/* manual book: tampilan layar dan cetak PDF (class berawalan hanif_mb_) */
+:root { --hanif_mb_ink: #1c1c1c; --hanif_mb_gray: #6a6a6a; --hanif_mb_line: #e2e0dc; --hanif_mb_beige: #f3ede4; --hanif_mb_black: #111; }
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin: 0; background: #d9d6d0; color: var(--hanif_mb_ink); font-family: "Inter", system-ui, "Segoe UI", Arial, sans-serif; font-size: 11pt; line-height: 1.6; }
+.hanif_mb_toolbar { position: sticky; top: 0; z-index: 5; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 20px; background: #111; color: #fff; font-size: 14px; }
+.hanif_mb_toolbar a { color: #fff; }
+.hanif_mb_toolbar button { background: #fff; color: #111; border: 0; border-radius: 999px; padding: 8px 18px; font-weight: 600; cursor: pointer; }
+.hanif_mb_doc { width: min(210mm, 100%); margin: 24px auto; background: #fff; box-shadow: 0 10px 40px rgba(0, 0, 0, .2); }
+.hanif_mb_cover { min-height: 297mm; padding: 40mm 24mm; background: #111; color: var(--hanif_mb_beige); display: flex; flex-direction: column; justify-content: center; }
+.hanif_mb_cover_logo img { height: 36mm; width: auto; display: block; }
+.hanif_mb_cover_eyebrow { letter-spacing: .5em; font-size: 11pt; margin: 18mm 0 4mm; color: #c9bda9; }
+.hanif_mb_cover h1 { font-size: 54pt; letter-spacing: .18em; margin: 0 0 6mm; font-weight: 800; line-height: 1.1; }
+.hanif_mb_cover_slogan { font-family: "Playfair Display", Georgia, serif; font-style: italic; font-size: 17pt; margin: 0 0 4mm; }
+.hanif_mb_cover_sub { font-size: 12pt; color: #c9bda9; margin: 0; }
+.hanif_mb_cover_meta { margin-top: 40mm; padding-top: 8mm; border-top: 1px solid rgba(243, 237, 228, .3); display: grid; gap: 2mm; font-size: 10.5pt; color: #c9bda9; }
+.hanif_mb_front, .hanif_mb_chapter { padding: 0 20mm; }
+.hanif_mb_front { padding-top: 20mm; padding-bottom: 12mm; }
+.hanif_mb_chapter { padding-top: 10mm; padding-bottom: 4mm; }
+h2 { font-family: "Playfair Display", Georgia, serif; font-size: 18pt; margin: 0 0 5mm; padding-bottom: 3mm; border-bottom: 2px solid var(--hanif_mb_black); break-after: avoid; }
+.hanif_mb_unnum { font-size: 22pt; }
+p { margin: 0 0 3.5mm; text-align: justify; }
+ul, ol { margin: 0 0 4mm; padding-left: 6mm; }
+li { margin-bottom: 1.6mm; }
+code { font-family: "Consolas", "Courier New", monospace; font-size: .88em; background: var(--hanif_mb_beige); padding: 0 4px; border-radius: 3px; }
+.hanif_mb_sign { text-align: right; margin-top: 14mm; }
+.hanif_mb_toc ol { list-style: none; padding: 0; }
+.hanif_mb_toc li { margin: 0; border-bottom: 1px dotted var(--hanif_mb_line); }
+.hanif_mb_toc a { display: flex; align-items: baseline; gap: 6px; padding: 1.15mm 0; color: inherit; text-decoration: none; }
+.hanif_mb_toc_dots { flex: 1; }
+.hanif_mb_toc_p { font-weight: 600; min-width: 8mm; text-align: right; }
+.hanif_mb_steps { counter-reset: hanif_mb_s; list-style: none; padding: 0; }
+.hanif_mb_steps li { counter-increment: hanif_mb_s; position: relative; padding-left: 9mm; break-inside: avoid; }
+.hanif_mb_steps li::before { content: counter(hanif_mb_s); position: absolute; left: 0; top: .15em; width: 6mm; height: 6mm; border-radius: 50%; background: var(--hanif_mb_black); color: #fff; font-size: 8.5pt; font-weight: 700; display: grid; place-items: center; line-height: 1; }
+.hanif_mb_fig { margin: 4mm 0 6mm; break-inside: avoid; text-align: center; }
+.hanif_mb_fig img { width: 100%; max-height: 112mm; object-fit: contain; border: 1px solid var(--hanif_mb_line); border-radius: 4px; background: #fff; }
+.hanif_mb_fig_small img { width: 62mm; }
+.hanif_mb_fig figcaption { margin-top: 2mm; font-size: 9pt; color: var(--hanif_mb_gray); font-style: italic; }
+.hanif_mb_note { margin: 4mm 0; padding: 3.5mm 5mm; background: var(--hanif_mb_beige); border-left: 3px solid var(--hanif_mb_black); font-size: 10pt; break-inside: avoid; }
+.hanif_mb_table { width: 100%; border-collapse: collapse; margin: 0 0 5mm; font-size: 10pt; break-inside: avoid; }
+.hanif_mb_table th { background: var(--hanif_mb_black); color: #fff; text-align: left; padding: 2.2mm 3mm; }
+.hanif_mb_table td { padding: 2.2mm 3mm; border-bottom: 1px solid var(--hanif_mb_line); vertical-align: top; }
+.hanif_mb_table td:first-child { width: 34%; font-weight: 600; }
+.hanif_mb_code { background: #111; color: #f3ede4; padding: 5mm; border-radius: 4px; font-family: "Consolas", "Courier New", monospace; font-size: 8.6pt; line-height: 1.5; overflow: hidden; break-inside: avoid; white-space: pre; }
+
+@media (max-width: 800px) {
+  .hanif_mb_cover { padding: 30px 20px; min-height: 80vh; }
+  .hanif_mb_cover h1 { font-size: 36pt; }
+  .hanif_mb_front, .hanif_mb_chapter { padding-inline: 18px; }
+  .hanif_mb_code { overflow-x: auto; }
+}
+
+/* ---------- Cetak / PDF: A4, header dan footer dengan nomor halaman ---------- */
+@page { size: A4; margin: 22mm 0 20mm; @top-left { content: "MANUAL BOOK NIFSTORE"; font: 600 8pt Inter, Arial, sans-serif; color: #6a6a6a; margin-left: 20mm; letter-spacing: .12em; }
+  @top-right { content: "Pemrograman Internet - UTS 2026/2027"; font: 8pt Inter, Arial, sans-serif; color: #6a6a6a; margin-right: 20mm; }
+  @bottom-left { content: "NIFSTORE - Wear Your Style. Define Your Identity."; font: 8pt Inter, Arial, sans-serif; color: #6a6a6a; margin-left: 20mm; }
+  @bottom-right { content: "Halaman " counter(page); font: 600 8pt Inter, Arial, sans-serif; color: #111; margin-right: 20mm; } }
+@page :first { margin: 0; @top-left { content: none; } @top-right { content: none; } @bottom-left { content: none; } @bottom-right { content: none; } }
+@media print {
+  body { background: #fff; font-size: 10.5pt; }
+  .hanif_mb_toolbar { display: none; }
+  .hanif_mb_doc { width: auto; margin: 0; box-shadow: none; }
+  .hanif_mb_cover { height: 297mm; min-height: 0; break-after: page; }
+  .hanif_mb_front { break-after: page; padding-top: 0; }
+  .hanif_mb_chapter { padding-top: 6mm; }
+  .hanif_mb_chapter#hanif_bab_1 { break-before: auto; }
+  a { color: inherit; text-decoration: none; }
+}
+
+.hanif_mb_chapter h3 { font-size: 12pt; margin: 6mm 0 2mm; break-after: avoid; }
+.hanif_mb_cover_meta .hanif_mb_cover_name { font-size: 15pt; font-weight: 700; color: var(--hanif_mb_beige); letter-spacing: .08em; }
+.hanif_mb_chapter h3 + p { break-after: avoid; }
